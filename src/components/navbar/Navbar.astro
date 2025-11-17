@@ -2,23 +2,21 @@
 import Hamburger from "../hamburger-menu/Hamburger.astro";
 
 const logo = {
-  src: "/logowildars.webp",
-  alt: "Wildcars Logo",
+  src: "/copa-logo.webp",
+  alt: "Automotriz Logo",
   width: 200,
   height: 80
 };
 const socialLinks = [
     { 
         name: "Facebook", 
-        href: "https://web.facebook.com/profile.php?id=61578635675285", 
-        iconClass: "fab fa-facebook-f",
-        hoverColor: "hover:bg-blue-600"
+        href: "https://web.facebook.com/copayapuautomotriz", 
+        iconClass: "fab fa-facebook-f"
     },
     { 
         name: "Instagram", 
-        href: "https://www.instagram.com/wildcars.cl/", 
-        iconClass: "fab fa-instagram",
-        hoverColor: "hover:bg-pink-600"
+        href: "https://www.instagram.com/copayapuautomotriz/", 
+        iconClass: "fab fa-instagram"
     }
 ];
 
@@ -31,20 +29,20 @@ const navLinks = [
 
 ---
 
-<nav class="bg-white fixed w-full top-0 z-50">
+<nav class="bg-black text-white font-sans fixed w-full top-0 z-50 border-b border-[#262629]">
   <div class="relative md:w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <!-- Logo (Always on the left) -->
       <div class="flex-shrink-0">
         <a href="/" class="flex items-center">
-          <img class="h-14 w-auto" src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} />
+          <img class="h-18 w-auto" src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} />
         </a>
       </div>
 
       <!-- Navigation Links (Hidden on mobile, centered on desktop) -->
       <div class="hidden lg:flex lg:items-center lg:space-x-8 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
         {navLinks.map((link) => (
-          <a href={link.href} class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+          <a href={link.href} class="text-white hover:text-[#e5cd7d] px-4 py-2 rounded-md text-lg font-bold tracking-wide transition-colors">
             {link.name}         
           </a>
         ))}
@@ -57,7 +55,7 @@ const navLinks = [
             href={social.href} 
             target="_blank"
             rel="noopener noreferrer"
-            class={`w-8 h-8 lg:w-10 lg:h-10 bg-gray-800 rounded-full flex items-center justify-center ${social.hoverColor} transition-colors duration-200`}
+            class="w-8 h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center bg-[#262629] hover:bg-[#e63333] transition-colors duration-200"
             aria-label={social.name}
           >
             <i class={`${social.iconClass} text-white text-sm lg:text-lg`}></i>
@@ -74,4 +72,3 @@ const navLinks = [
   </div>
 
 </nav>
-

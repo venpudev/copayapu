@@ -29,34 +29,27 @@ const contactInfo = [
         icon: "fas fa-map-marker-alt",
         link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5425.243667575447!2d-71.26680021286374!3d-29.939145151176803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca4a95b55a57%3A0xf74991178fd05ab3!2sAv.%20Balmaceda%204415%2C%201710583%20Coquimbo%2C%20La%20Serena%2C%20Coquimbo!5e0!3m2!1ses!2scl!4v1763390705064!5m2!1ses!2scl",
         isExternal: true
+    }
+];
+
+const salesTeam = [
+    {
+        name: "Lina Arévalo",
+        phone: "+56 9 4073 1529",
+        phoneHref: "tel:+56940731529",
+        whatsapp: "56940731529"
     },
     {
-        type: "Teléfono",
-        value: "+56 9 8993 9362",
-        icon: "fas fa-phone",
-        link: "tel:+56989939362",
-        isExternal: false
+        name: "Estefanía Cortés",
+        phone: "+56 9 7373 4208",
+        phoneHref: "tel:+56973734208",
+        whatsapp: "56973734208"
     },
     {
-        type: "Teléfono",
-        value: "+56 9 7306 3816",
-        icon: "fas fa-phone",
-        link: "tel:+56973063816",
-        isExternal: false
-    },
-    {
-        type: "Correo",
-        value: "rolando@wildcars.cl",
-        icon: "fas fa-envelope",
-        link: "mailto:rolando@wildcars.cl",
-        isExternal: false
-    },
-    {
-        type: "Correo",
-        value: "alfredo@wildcars.cl",
-        icon: "fas fa-envelope",
-        link: "mailto:alfredo@wildcars.cl",
-        isExternal: false
+        name: "Paola Galán",
+        phone: "+56 9 4207 9452",
+        phoneHref: "tel:+56942079452",
+        whatsapp: "56942079452"
     }
 ];
 ---
@@ -64,23 +57,18 @@ const contactInfo = [
 <footer class="bg-[#020617] text-white relative z-1">
   <div class="absolute inset-0 z-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 80, 120, 0.25), transparent 70%), #000000" }} />
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-    <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Primera Columna: Logo y Redes Sociales -->
-      <div class="space-y-6">
-        <!-- Logo -->
-        <div class="flex items-center space-x-4">
-          <img class="h-24 w-auto" src="/logo.webp" alt="Wildcars - Automotora">
-          <span class="text-1xl font-bold text-white">Wildcars</span>
+    <div class="grid grid-cols-1 xl:grid-cols-[1.1fr_1.9fr] gap-10 items-start">
+      <div class="space-y-6 bg-black/10 rounded-2xl p-6 border border-white/5">
+        <div class="flex flex-col items-start space-y-3">
+          <img class="h-18 w-auto" src="/copa-logo.webp" alt="Automotriz Copayapu Logo" width="150" height="60" />
+          <span class="text-xl font-bold text-white tracking-wide">Automotriz Copayapu</span>
+          <p class="text-sm text-gray-400 max-w-sm">Compra, venta y consignación de vehículos con la confianza del norte de Chile.</p>
         </div>
-
-        <!-- Redes Sociales -->
         <div>
           <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
           <div class="flex space-x-4">
             {socialLinks.map((social) => (
-              <a href={social.href} class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-200" aria-label={social.name} target={social.target} rel="noopener noreferrer">
+              <a href={social.href} class="w-10 h-10 bg-[#262629] rounded-full flex items-center justify-center hover:bg-[#e63333] transition-colors duration-200" aria-label={social.name} target={social.target} rel="noopener noreferrer">
                 <i class={`${social.icon} text-sm text-white`}></i>
               </a>
             ))}
@@ -88,47 +76,70 @@ const contactInfo = [
         </div>
       </div>
 
-      <!-- Segunda Columna: Enlaces del Menú -->
-      <div>
-        <h3 class="text-lg font-semibold mb-6">Navegación</h3>
-        <ul class="space-y-3">
-          {menuLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-gray-400 hover:text-white transition-colors duration-200 flex items-center">
-                <i class="fas fa-chevron-right text-xs mr-2"></i>
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Tercera Columna: Información de Contacto -->
-      <div>
-        <h3 class="text-lg font-semibold mb-6">Contacto</h3>
-        <div class="space-y-4">
-          {contactInfo.map((contact) => (
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0">
-                <i class={`${contact.icon} text-white mt-1`}></i>
-              </div>
-              <div>
-                <p class="text-sm font-medium text-gray-300">{contact.type}</p>
-                {contact.link ? (
-                  <a 
-                    href={contact.link}
-                    target={contact.isExternal ? "_blank" : undefined}
-                    rel={contact.isExternal ? "noopener noreferrer" : undefined}
-                    class="text-gray-400 hover:text-white transition-colors duration-200 underline decoration-dotted hover:decoration-solid"
-                  >
-                    {contact.value}
-                  </a>
-                ) : (
-                  <p class="text-gray-400">{contact.value}</p>
-                )}
+      <div class="bg-[#262629] border border-[#e63333]/30 rounded-2xl p-6 space-y-8 shadow-2xl">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-semibold text-white">Conecta con nosotros</h3>
+            <p class="text-sm text-gray-400">Navega el sitio, ubícanos y conversa con nuestro equipo en un mismo bloque.</p>
+          </div>
+          <span class="px-4 py-1 rounded-full text-xs font-semibold bg-[#e5cd7d]/20 text-[#e5cd7d] uppercase tracking-wide">Atención personalizada</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-base font-semibold text-white mb-4">Navegación</h4>
+              <ul class="space-y-3">
+                {menuLinks.map((link) => (
+                  <li>
+                    <a href={link.href} class="text-gray-300 hover:text-[#e5cd7d] transition-colors duration-200 flex items-center">
+                      <i class="fas fa-chevron-right text-xs mr-2 text-[#e5cd7d]"></i>
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-base font-semibold text-white mb-4">Contáctanos</h4>
+              <div class="space-y-4">
+                {contactInfo.map((contact) => (
+                  <div class="flex items-start space-x-3 rounded-xl border border-white/10 bg-black/30 p-4">
+                    <i class={`${contact.icon} text-[#e5cd7d] mt-1`}></i>
+                    <div>
+                      <p class="text-sm font-medium text-gray-300">{contact.type}</p>
+                      <a 
+                        href={contact.link}
+                        target={contact.isExternal ? "_blank" : undefined}
+                        rel={contact.isExternal ? "noopener noreferrer" : undefined}
+                        class="text-white hover:text-[#e5cd7d] transition-colors duration-200 underline decoration-dotted"
+                      >
+                        {contact.value}
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-base font-semibold text-white">Equipo Comercial</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+              {salesTeam.map((seller) => (
+                <a 
+                  class="rounded-2xl border border-white/10 bg-black/30 p-5 flex flex-col items-center gap-4 text-center hover:border-[#e5cd7d]/60 hover:bg-black/40 transition-all"
+                  href={`https://wa.me/${seller.whatsapp}?text=${encodeURIComponent('Hola ' + seller.name + ', necesito más información.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p class="text-lg font-semibold text-white">{seller.name}</p>
+                  <div class="w-12 h-12 rounded-full bg-[#10853f] flex items-center justify-center shadow-md">
+                    <i class="fab fa-whatsapp text-xl text-white"></i>
+                  </div>
+                  <span class="text-xs font-semibold tracking-wide text-[#e5cd7d] uppercase">Contactar</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -139,7 +150,7 @@ const contactInfo = [
         <p class="text-gray-400 text-sm">© 2025 Automotriz Copayapu. Todos los derechos reservados.</p>
         <p class="text-gray-500 text-xs mt-2">
           Diseño y desarrollo 
-          <a href="https://venpu.cl" target="_blank" class="text-red-400 hover:text-red-300 transition-colors duration-200 font-medium">
+          <a href="https://venpu.cl" target="_blank" class="text-[#e63333] hover:text-[#e5cd7d] transition-colors duration-200 font-medium">
             Venpu
           </a>
         </p>

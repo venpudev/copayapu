@@ -170,7 +170,7 @@ const vehicleImages = vehicle.imageGallery && vehicle.imageGallery.length > 0
               <span class="text-gray-400">🏷️</span>
               <div>
                 <p class="text-sm text-gray-600">Estado</p>
-                <p class={`font-semibold ${vehicle.available ? 'text-green-600' : 'text-red-600'}`}>
+                <p class={`font-semibold ${vehicle.available ? 'text-[#e5cd7d]' : 'text-[#e63333]'}`}>
                   {vehicle.available ? 'Disponible' : 'Vendido'}
                 </p>
               </div>
@@ -201,11 +201,11 @@ const vehicleImages = vehicle.imageGallery && vehicle.imageGallery.length > 0
             <div class="mb-4">
               <h1 class="text-2xl font-bold text-gray-900 mb-2">{vehicle.name}</h1>
               {vehicle.available ? (
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#e5cd7d]/30 text-[#262629]">
                   ✓ Disponible
                 </span>
               ) : (
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#e63333]/15 text-[#e63333]">
                   ✗ Vendido
                 </span>
               )}
@@ -220,7 +220,7 @@ const vehicleImages = vehicle.imageGallery && vehicle.imageGallery.length > 0
               href="/contacto" 
               class={`w-full font-bold py-3 px-4 rounded-lg transition-colors text-center block ${
                 vehicle.available 
-                  ? 'bg-green-600 hover:bg-green-700 text-white' 
+                  ? 'bg-[#e63333] hover:bg-[#c22525] text-white' 
                   : 'bg-gray-400 text-gray-600 cursor-not-allowed'
               }`}
             >
@@ -233,11 +233,11 @@ const vehicleImages = vehicle.imageGallery && vehicle.imageGallery.length > 0
             <h3 class="text-lg font-bold mb-4">Medios de pago</h3>
             <div class="space-y-3">
               <div class="flex items-center space-x-2">
-                <span class="text-green-500">✓</span>
+                <span class="text-[#e5cd7d]">✓</span>
                 <span class="text-sm">Efectivo</span>
               </div>
               <div class="flex items-center space-x-2">
-                <span class="text-green-500">✓</span>
+                <span class="text-[#e5cd7d]">✓</span>
                 <span class="text-sm">Transferencia bancaria</span>
               </div>
               <div class="flex items-center space-x-2">

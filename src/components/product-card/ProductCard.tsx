@@ -27,16 +27,16 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           {vehicle.available ? (
             <div className="space-y-2">
               {vehicle.label && (
-                <div className="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                <div className="bg-[#e5cd7d] text-[#262629] px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                   {vehicle.label}
                 </div>
               )}
-              <div className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+              <div className="bg-[#e5cd7d] text-[#262629] px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                 ✓ Disponible
               </div>
             </div>
           ) : (
-            <div className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+            <div className="bg-[#e63333] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
               ✕ Vendido
             </div>
           )}
@@ -94,7 +94,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           {/* CTA Button */}
           <a
             href={`/vehiculos/${formatNameForURL(vehicle.name)}`}
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-[11px] font-medium transition-colors duration-200 shadow-sm hover:shadow-md"
+            className="bg-[#e63333] hover:bg-[#c22525] text-white px-4 py-2 rounded-lg text-[11px] font-medium transition-colors duration-200 shadow-sm hover:shadow-md"
           >
             Ver más
           </a>

@@ -181,7 +181,7 @@ export function Catalogo() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-red-400"></div>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#e5cd7d]"></div>
       </div>
     );
   }
@@ -199,7 +199,7 @@ export function Catalogo() {
           </p>
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold"
+            className="lg:hidden bg-[#e63333] hover:bg-[#c22525] text-white px-4 py-2 rounded-lg font-semibold transition-colors"
           >
             {showFilters ? "Ocultar Filtros" : "Mostrar Filtros"}
           </button>
@@ -216,7 +216,7 @@ export function Catalogo() {
               <h2 className="text-xl font-bold text-white">Filtros</h2>
               <button
                 onClick={clearFilters}
-                className="text-sm text-red-400 hover:text-red-300"
+                className="text-sm text-[#e5cd7d] hover:text-[#e63333]"
               >
                 Limpiar todo
               </button>
@@ -299,7 +299,7 @@ export function Catalogo() {
                         min: newMin,
                       });
                     }}
-                    className="w-full accent-red-400"
+                    className="w-full accent-[#e5cd7d]"
                   />
                 </div>
                 <div>
@@ -319,7 +319,7 @@ export function Catalogo() {
                         max: newMax,
                       });
                     }}
-                    className="w-full accent-red-400"
+                    className="w-full accent-[#e5cd7d]"
                   />
                 </div>
                 <div className="text-xs text-gray-500">
@@ -386,7 +386,7 @@ export function Catalogo() {
                         min: parseInt(e.target.value),
                       })
                     }
-                    className="w-full accent-red-400"
+                    className="w-full accent-[#e5cd7d]"
                   />
                 </div>
                 <div>
@@ -405,7 +405,7 @@ export function Catalogo() {
                         max: parseInt(e.target.value),
                       })
                     }
-                    className="w-full accent-red-400"
+                    className="w-full accent-[#e5cd7d]"
                   />
                 </div>
                 <div className="text-xs text-gray-500">
@@ -465,7 +465,7 @@ export function Catalogo() {
                           onClick={() => setCurrentPage(pageNumber)}
                           className={`px-3 py-2 rounded-lg ${
                             currentPage === pageNumber
-                              ? "bg-red-400 text-black font-bold"
+                              ? "bg-[#e5cd7d] text-[#262629] font-bold"
                               : "bg-gray-800 text-white hover:bg-gray-700"
                           }`}
                         >

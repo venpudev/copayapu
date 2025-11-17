@@ -26,7 +26,7 @@ const slideImages: SlideData[] = [
   {
     src: slide01.src,
     alt: "Interior moderno de automóvil",
-    title: "En Wild Cars",
+    title: "En Automotriz Copayapu",
     subtitle: "Tu próximo auto te está esperando",
   },
   {
@@ -65,21 +65,21 @@ const HeroSlider: React.FC = () => {
       /* Estilos aplicados inmediatamente para evitar el flash azul */
       .swiper-button-next,
       .swiper-button-prev {
-        color: #dc2626 !important;
+        color: #e63333 !important;
       }
 
       .swiper-button-next:hover,
       .swiper-button-prev:hover {
-        color: #b91c1c !important;
+        color: #e5cd7d !important;
       }
 
       .swiper-pagination-bullet {
-        background: #dc2626 !important;
+        background: #e63333 !important;
         opacity: 0.5 !important;
       }
 
       .swiper-pagination-bullet-active {
-        background: #dc2626 !important;
+        background: #e63333 !important;
         opacity: 1 !important;
       }
     `;
@@ -94,9 +94,8 @@ const HeroSlider: React.FC = () => {
   }, []);
 
   return (
-    <section className="hero-section my-14 py-8 sm:py-12 lg:py-16 relative overflow-hidden">
-    
-      <div className="md:w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="hero-section my-14 relative overflow-hidden">
+      <div className="w-full">
         <Swiper
           ref={swiperRef}
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -127,14 +126,14 @@ const HeroSlider: React.FC = () => {
         >
           {slideImages.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-80 sm:h-96 md:h-[450px] lg:h-[500px] overflow-hidden rounded-[20px] sm:rounded-[30px] lg:rounded-[50px] ">
+              <div className="relative h-80 sm:h-96 md:h-[450px] lg:h-[500px] overflow-hidden">
                 <img
                   src={slide.src}
                   alt={slide.alt}
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-center rounded-[20px] sm:rounded-[30px] lg:rounded-[50px]">
-                  <div className="container mx-auto px-12 sm:px-8 lg:px-[130px]">
+                <div className="absolute inset-0 bg-black/50 flex items-center">
+                  <div className="w-full px-6 sm:px-10 lg:px-24">
                     <div className="max-w-full sm:max-w-2xl lg:max-w-3xl text-white">
                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
                         {slide.title}
@@ -144,7 +143,7 @@ const HeroSlider: React.FC = () => {
                       </p>
                       <a
                         href="/catalogo"
-                        className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm sm:text-base lg:text-lg rounded-md sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                        className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-[#e63333] hover:bg-[#c22525] text-white font-semibold text-sm sm:text-base lg:text-lg rounded-md sm:rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                       >
                         Ver Stock
                         <svg
@@ -171,11 +170,11 @@ const HeroSlider: React.FC = () => {
           {/* Navigation buttons con clases personalizadas y estilos inline */}
           <div
             className="custom-swiper-button-prev swiper-button-prev"
-            style={{ color: "#dc2626" }}
+            style={{ color: "#e63333" }}
           ></div>
           <div
             className="custom-swiper-button-next swiper-button-next"
-            style={{ color: "#dc2626" }}
+            style={{ color: "#e63333" }}
           ></div>
 
           {/* Pagination con clase personalizada */}

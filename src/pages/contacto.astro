@@ -53,7 +53,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
                     name="name"
                     required
                     placeholder="Tu nombre"
-                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e5cd7d] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                   />
                 </div>
                 <div class="space-y-2">
@@ -64,7 +64,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
                     name="phone"
                     required
                     placeholder="+56 9 1234 5678"
-                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                    class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e5cd7d] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                   />
                 </div>
               </div>
@@ -77,7 +77,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
                   name="email"
                   required
                   placeholder="tu@email.com"
-                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e5cd7d] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                 />
               </div>
               
@@ -89,7 +89,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
                   rows="5"
                   required
                   placeholder="Cuéntanos en qué podemos ayudarte..."
-                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 resize-none"
+                  class="w-full px-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e5cd7d] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 resize-none"
                 ></textarea>
               </div>
 
@@ -101,7 +101,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
               
               <button
                 type="submit"
-                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 shadow-lg"
+                class="w-full bg-[#e63333] hover:bg-[#c22525] text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#e5cd7d] focus:ring-offset-2 shadow-lg"
               >
                 Enviar mensaje
               </button>
@@ -118,8 +118,8 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
               
               <!-- Phone 1 -->
               <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 bg-[#e5cd7d]/20 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-[#e5cd7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                   </svg>
                 </div>
@@ -135,8 +135,8 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 
               <!-- Email -->
               <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 bg-[#e63333]/10 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-[#e63333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
                 </div>
@@ -154,8 +154,8 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 
               <!-- Location -->
               <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 bg-[#e63333]/10 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-[#e63333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                   </svg>
@@ -168,8 +168,8 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
 
               <!-- Hours -->
               <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 bg-[#262629]/10 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-[#262629]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
@@ -187,15 +187,15 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
             <div class="space-y-4">
         
               <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-[#e5cd7d] rounded-full"></div>
                 <p class="text-gray-700">Crédito automotriz</p>
               </div>
               <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-[#e5cd7d] rounded-full"></div>
                 <p class="text-gray-700">La mejor tasa de interés (1.89%)</p>
               </div>
               <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-[#e5cd7d] rounded-full"></div>
                 <p class="text-gray-700">Garantía</p>
               </div>
             </div>
@@ -242,7 +242,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
     if (!hcaptchaResponse) {
       formStatus.classList.remove('hidden');
       statusText.textContent = 'Por favor, completa la verificación de seguridad.';
-      formStatus.className = 'text-red-700 text-center p-4 bg-red-50 rounded-xl border border-red-200';
+      formStatus.className = 'text-[#e63333] text-center p-4 bg-[#e63333]/10 rounded-xl border border-[#e63333]/30';
       return;
     }
 
@@ -284,7 +284,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
       form.reset();
       (window as any).hcaptcha?.reset(); // Reset hCaptcha
       statusText.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
-      formStatus.className = 'text-green-700 text-center p-4 bg-green-50 rounded-xl border border-green-200';
+      formStatus.className = 'text-[#262629] text-center p-4 bg-[#e5cd7d]/20 rounded-xl border border-[#e5cd7d]/40';
       
       // Reset form after 5 seconds
       setTimeout(() => {
@@ -294,7 +294,7 @@ const keyHcaptcha: string = import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? '';
       // Show error message
       (window as any).hcaptcha?.reset(); // Reset hCaptcha on error
       statusText.textContent = 'Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente.';
-      formStatus.className = 'text-red-700 text-center p-4 bg-red-50 rounded-xl border border-red-200';
+      formStatus.className = 'text-[#e63333] text-center p-4 bg-[#e63333]/10 rounded-xl border border-[#e63333]/30';
     } finally {
       // Re-enable form
       form.querySelectorAll('input, textarea, button').forEach((el) => {
