@@ -1,53 +1,36 @@
 ---
 import { Image } from 'astro:assets';
 
-import falabella from '../../assets/brands/Banco-falabella.png';
-import santander from '../../assets/brands/Santander-finance.png';
-import tanner from '../../assets/brands/Tanner.png';
-import unidad from '../../assets/brands/Unidad-financiera.png';
-import venpu from '../../assets/brands/Venpu.png';
-
+import autofin from '../../assets/brands/autofin.png';
+import santander from '../../assets/brands/santander-consumer.png';
+import autocred from '../../assets/brands/autocred.png';
+import unidad from '../../assets/brands/unidad.png';
+import falabella from '../../assets/brands/banco-falabella.png';
+import global from '../../assets/brands/global.png';
+import venpu from '../../assets/brands/venpu.png';
 
 const brands = [
-  {
-    name: 'Banco Falabella',
-    logo: falabella,
-    alt: 'Banco Falabella Logo'
-  },
-
-  {
-    name: 'Santander Finance',      
-    logo: santander,  
-    alt: 'Tanner Logo' 
-  },  
-  {
-    name: 'Tanner',      
-    logo: tanner,  
-    alt: 'Santander Logo' 
-  },
-  {
-    name: 'Unidad',      
-    logo: unidad,  
-    alt: 'Unidad Logo' 
-  }, 
-  {
-    name: 'Venpu',
-    logo: venpu,
-    alt: 'Venpu Logo'
-  }
+  { name: 'Autofin', logo: autofin, alt: 'Autofin Logo' },
+  { name: 'Santander Consumer', logo: santander, alt: 'Santander Consumer Logo' },
+  { name: 'Autocred', logo: autocred, alt: 'Autocred Logo' },
+  { name: 'Unidad', logo: unidad, alt: 'Unidad Financiera Logo' },
+  { name: 'Banco Falabella', logo: falabella, alt: 'Banco Falabella Logo' },
+  { name: 'Global', logo: global, alt: 'Global Finance Logo' },
+  { name: 'Venpu', logo: venpu, alt: 'Venpu Logo' }
 ];
+
+const desktopBrands = [...brands, ...brands.slice(0, 4)];
 ---
 
 
 <div class="bg-white py-24 sm:py-32">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <h2 class="text-center font-semibold text-black text-2xl sm:text-4xl">Nuestros Partners</h2>
-    <div class="mx-auto mt-10 grid grid-cols-2 items-center gap-x-4 gap-y-10 sm:grid-cols-5 lg:grid-cols-5">
-    
+    <div class="lg:hidden mx-auto mt-10 grid grid-cols-2 items-center gap-x-4 gap-y-10 sm:grid-cols-5">
       {brands.map((brand) => (
         <div class="flex items-center justify-center">
           <Image
-            class=" w-full object-contain"
+            class="w-full object-contain"
             src={brand.logo ?? ''}
             alt={brand.alt ?? ''}
             width={220}
@@ -55,7 +38,99 @@ const brands = [
           />
         </div>
       ))}
-      
+    </div>
+
+    <div class="hidden lg:block mt-12">
+      <div class="relative overflow-hidden border border-gray-100 rounded-3xl bg-gray-50/60" data-brand-slider>
+        <div 
+          class="partners-track px-4 py-8"
+          data-brand-track
+          data-original={brands.length}
+        >
+          {desktopBrands.map((brand, index) => (
+            <div class="partner-card flex items-center justify-center" data-brand-item aria-hidden={index >= brands.length}>
+              <Image
+                class="max-h-20 object-contain"
+                src={brand.logo ?? ''}
+                alt={brand.alt ?? ''}
+                width={220}
+                height={90}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script is:inline>
+  const slider = document.querySelector("[data-brand-slider]");
+  const track = slider?.querySelector("[data-brand-track]");
+  const mediaQuery = window.matchMedia("(min-width: 1024px)");
+  if (slider && track && mediaQuery) {
+    let index = 0;
+    let step = 0;
+    let timer;
+    const originalCount = Number(track.dataset.original || 0);
+
+    const updateStep = () => {
+      const item = track.querySelector("[data-brand-item]");
+      step = item ? item.getBoundingClientRect().width : 0;
+    };
+
+    const jumpToStart = () => {
+      track.style.transition = "none";
+      track.style.transform = "translateX(0)";
+      index = 0;
+    };
+
+    const slide = () => {
+      if (!mediaQuery.matches || step === 0) return;
+      index += 1;
+      track.style.transition = "transform 600ms ease-in-out";
+      track.style.transform = `translateX(-${step * index}px)`;
+
+      if (index === originalCount) {
+        setTimeout(() => {
+          jumpToStart();
+        }, 620);
+      }
+    };
+
+    const startSlider = () => {
+      if (!mediaQuery.matches) {
+        if (timer) clearInterval(timer);
+        jumpToStart();
+        return;
+      }
+
+      updateStep();
+      if (timer) clearInterval(timer);
+      timer = setInterval(slide, 4500);
+    };
+
+    mediaQuery.addEventListener("change", startSlider);
+    window.addEventListener("resize", () => {
+      if (mediaQuery.matches) {
+        updateStep();
+        jumpToStart();
+      }
+    });
+    startSlider();
+  }
+</script>
+
+<style>
+  @media (min-width: 1024px) {
+    .partners-track {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .partners-track .partner-card {
+      flex: 0 0 25%;
+      padding: 1rem;
+    }
+  }
+</style>
